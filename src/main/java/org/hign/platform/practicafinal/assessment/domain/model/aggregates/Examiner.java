@@ -2,10 +2,14 @@ package org.hign.platform.practicafinal.assessment.domain.model.aggregates;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import org.hign.platform.practicafinal.assessment.domain.model.commands.CreateExaminerCommand;
 import org.hign.platform.practicafinal.assessment.domain.model.valueobjects.NationalProviderIdentifier;
+import org.hign.platform.practicafinal.personnel.domain.model.aggregates.MentalStateExam;
 import org.hign.platform.practicafinal.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
+
+import java.util.List;
 
 @Getter
 @Entity
@@ -14,6 +18,9 @@ public class Examiner extends AuditableAbstractAggregateRoot<Examiner> {
     private String lastName;
     @Embedded
     private NationalProviderIdentifier npi;
+
+    @OneToMany(mappedBy = "examiner")
+    private List<MentalStateExam> mentalStateExams;
 
     public Examiner() {
         this.firstName = "";

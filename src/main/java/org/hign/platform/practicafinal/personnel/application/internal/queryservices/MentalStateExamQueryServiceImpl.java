@@ -5,9 +5,11 @@ import org.hign.platform.practicafinal.assessment.domain.model.queries.GetExamin
 import org.hign.platform.practicafinal.personnel.domain.model.aggregates.MentalStateExam;
 import org.hign.platform.practicafinal.personnel.domain.services.MentalStateExamQueryService;
 import org.hign.platform.practicafinal.personnel.infrastructure.persistence.jpa.repositories.MentalStateExamRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+@Service
 
 public class MentalStateExamQueryServiceImpl implements MentalStateExamQueryService {
     private final MentalStateExamRepository mentalStateExamRepository;

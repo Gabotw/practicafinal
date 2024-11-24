@@ -3,6 +3,7 @@ package org.hign.platform.practicafinal.assessment.application.internal.queryser
 import org.hign.platform.practicafinal.assessment.domain.model.aggregates.Examiner;
 import org.hign.platform.practicafinal.assessment.domain.model.queries.GetAllExaminersQuery;
 import org.hign.platform.practicafinal.assessment.domain.model.queries.GetExaminerByIdQuery;
+import org.hign.platform.practicafinal.assessment.domain.model.queries.GetExaminerByNpiQuery;
 import org.hign.platform.practicafinal.assessment.domain.services.ExaminerQueryService;
 import org.hign.platform.practicafinal.assessment.infrastructure.persistence.jpa.repositories.ExaminerRepository;
 import org.springframework.stereotype.Service;
@@ -18,12 +19,11 @@ public class ExaminerQueryServiceImpl implements ExaminerQueryService {
         this.examinerRepository = examinerRepository;
     }
     @Override
-    public Optional<Examiner> handle(GetExaminerByIdQuery query) {
-        return examinerRepository.findById(query.id());
-    }
+    public Optional<Examiner> handle(GetExaminerByIdQuery query) { return examinerRepository.findById(query.id());}
 
     @Override
-    public List<Examiner> handle(GetAllExaminersQuery query) {
-        return examinerRepository.findAll();
-    }
+    public List<Examiner> handle(GetAllExaminersQuery query) { return examinerRepository.findAll();}
+
+    @Override
+    public Optional<Examiner> handle(GetExaminerByNpiQuery query) { return examinerRepository.findByNpi(query.npi());}
 }

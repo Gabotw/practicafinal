@@ -10,5 +10,6 @@ import java.util.Optional;
 @Repository
 public interface ExaminerRepository extends JpaRepository<Examiner, Long> {
     Optional<Examiner> findById(Long id);
+    Optional<Examiner> findByNpi(NationalProviderIdentifier npi);
     boolean existsByNpi(NationalProviderIdentifier npi);
 }
