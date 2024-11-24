@@ -1,4 +1,4 @@
-package com.aventon.platform.u202018627.shared.domain.model.aggregates;
+package org.hign.platform.practicafinal.shared.domain.model.aggregates;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.aventon.platform.u202018627.shared.domain.model.entities;
+package org.hign.platform.practicafinal.shared.domain.model.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;

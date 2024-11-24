@@ -1,4 +1,4 @@
 package org.hign.platform.practicafinal.personnel.domain.model.queries;
 
-public record GetMentalStateExamByIdQuery() {
+public record GetMentalStateExamByIdQuery(Long Id) {
 }
