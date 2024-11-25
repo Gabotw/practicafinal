@@ -23,7 +23,7 @@ public record  CreateMentalStateExamCommand(Long patiendId, String examinerNpi, 
         }
         try {
             Date parsedExamDate = new SimpleDateFormat("yyyy-MM-dd").parse(examDate);
-            if (parsedExamDate.before(new Date())) {
+            if (parsedExamDate.after(new Date())) {
                 throw new IllegalArgumentException("Exam date cannot be in the future");
             }
         } catch (ParseException e) {
